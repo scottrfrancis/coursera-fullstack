@@ -13,7 +13,7 @@
 
     $scope.checkMessage = function() {
       $scope.numItems = $scope.dishes.split(',')
-        .reduce(function(t,v) { return t + ((v.trim().length) ? 1 : 0) }, 0)
+        .reduce((t,v) => { return t + (v.trim().length > 0) }, 0)
 
       if ($scope.numItems <= 0) {
         $scope.message = 'Please enter data first'
