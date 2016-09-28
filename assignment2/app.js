@@ -14,7 +14,9 @@
 
     var buyList = [ { name: "cookies", quantity: 10 },
           { name: "beers", quantity: 12 },
-          { name: "pizzas", quantity: 4 } ]
+          { name: "pizzas", quantity: 4 },
+          { name:  "puppies", quantity: 3 },
+          { name:  "apples", quantity: 200 }]
     var boughtList = []
 
 
