@@ -1,0 +1,11 @@
+<!--{{ title }}: {{ list.length }} -->
+<h3 ng-hide="(list.length > 0)">Nothing Found</h3>
+<ul>
+  <li ng-repeat='item in list'>
+    {{ item.name }}, {{ item.short_name }}, {{ item.description }} 
+    <button class='btn' 
+      ng-click="rem({idx:$index})" >
+      Don't Want This One!
+    </button>
+  </li>
+</ul>
