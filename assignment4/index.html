@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Welcome to Our Restaurant</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.min.js"></script>
+    <script src="routes.js"></script>
+
+    <!-- modules -->
+    <script src="menu/menu.module.js"></script>
+
+    <!-- routes -->
+    <script src="routes.js"/>
+    <!-- artifacts -->
+  </head>
+<body >
+  <h1>Welcome to Our Restaurant</h1>
+
+  <div class="tabs">
+      <a ui-sref="home" ui-sref-active="activeTab">Home</a>
+      <a ui-sref="categories" ui-sref-active="activeTab">Menu Categories</a>
+      <a ui-sref="items" ui-sref-active="activeTab">Menu Items</a>
+    </div>
+
+    <ui-view></ui-view>
+
+</body>
+</html>
