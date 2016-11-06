@@ -8,7 +8,7 @@ MenuConfig.$inject = ['$stateProvider', '$urlRouterProvider']
 function MenuConfig($stateProvider, $urlRouterProvider) {
 
   // Redirect to home page if no other URL matches
-  $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('/')
 
   // *** Set up UI states ***
   $stateProvider
@@ -16,7 +16,7 @@ function MenuConfig($stateProvider, $urlRouterProvider) {
   // Home page
   .state('home', {
     url: '/',
-    templateUrl: 'src/shoppinglist/templates/home.template.html'
+    templateUrl: 'menu/templates/home.template.html'
   })
 
   // Premade list page
