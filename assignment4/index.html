@@ -1,34 +1,40 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app="MenuApp">
   <head>
     <title>Welcome to Our Restaurant</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles/bootstrap.min.css">
-    <link rel="stylesheet" href="styles/styles.css">
+    <!-- <link rel="stylesheet" href="styles/bootstrap.min.css"> -->
+    <!-- <link rel="stylesheet" href="css/styles.css"> -->
 
-    <!-- Libraries -->
-    <script src="lib/angular.min.js"></script>
-    <script src="lib/angular-ui-router.min.js"></script>
 
-    <!-- modules -->
-    <script src="menu/menu.module.js"></script>
-
-    <!-- routes -->
-    <script src="routes.js"/>
-    <!-- artifacts -->
   </head>
-<body >
+<body>
   <h1>Welcome to Our Restaurant</h1>
+
+  <div class="tabs">
+       <a ui-sref="home" ui-sref-active="activeTab">home</a>
+       <a ui-sref="categories" ui-sref-active="activeTab">categories</a>
+  </div>
 
   <ui-view></ui-view>
 
-  <!-- <div class="tabs">
-      <a ui-sref="home" ui-sref-active="activeTab">Home</a>
-      <a ui-sref="categories" ui-sref-active="activeTab">Menu Categories</a>
-      <a ui-sref="items" ui-sref-active="activeTab">Menu Items</a>
-    </div> -->
+  <!-- Libraries -->
+  <script src="lib/angular.min.js"></script>
+  <script src="lib/angular-ui-router.min.js"></script>
 
-    <!-- <ui-view></ui-view> -->
+  <!-- <script src="app.js"></script> -->
+
+  <!-- modules -->
+  <script src="menu/data.module.js"></script>
+  <script src="menu/menuapp.module.js"></script>
+
+  <!-- routes -->
+  <script src="routes.js"></script>
+
+  <!-- artifacts -->
+  <!-- <script src="menu/menu.component.js"></script>
+  <script src="menu/menu.controller.js"></script>
+  <script src="menu/menu.service.js"></script> -->
 
 </body>
 </html>

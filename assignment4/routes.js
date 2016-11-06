@@ -1,46 +1,47 @@
-(function () {
-'use strict'
+(function() {
+  'use strict'
 
-angular.module('Menu')
-.config(MenuConfig)
+  angular.module('MenuApp')
+    .config(RoutesConfig)
 
-MenuConfig.$inject = ['$stateProvider', '$urlRouterProvider']
-function MenuConfig($stateProvider, $urlRouterProvider) {
+  RoutesConfig.$inject = ['$stateProvider', '$urlRouterProvider']
 
-  // Redirect to home page if no other URL matches
-  $urlRouterProvider.otherwise('/')
+  function RoutesConfig($stateProvider, $urlRouterProvider) {
 
-  // *** Set up UI states ***
-  $stateProvider
+    // Redirect to home page if no other URL matches
+    $urlRouterProvider.otherwise('/')
 
-  // Home page
-  .state('home', {
-    url: '/',
-    templateUrl: 'menu/templates/home.template.html'
-  })
+    // *** Set up UI states ***
+    $stateProvider
 
-  // Premade list page
-  .state('categories', {
-    url: '/categories'
-    // templateUrl: 'src/shoppinglist/templates/main-shoppinglist.template.html',
-    // controller: 'MainShoppingListController as mainList',
-    // resolve: {
-    //   items: ['ShoppingListService', function (ShoppingListService) {
-    //     return ShoppingListService.getItems();
-    //   }]
-    // }
-  })
+    // Home page
+      .state('home', {
+      url: '/',
+      templateUrl: 'menu/templates/home.template.html'
+    })
 
-  .state('items', {
-    url: '/items'
-  })
+    // Premade list page
+    // .state('categories', {
+    //   url: '/categories'
+    //   // templateUrl: 'src/shoppinglist/templates/main-shoppinglist.template.html',
+    //   // controller: 'MainShoppingListController as mainList',
+    //   // resolve: {
+    //   //   items: ['ShoppingListService', function (ShoppingListService) {
+    //   //     return ShoppingListService.getItems();
+    //   //   }]
+    //   // }
+    // })
+    //
+    // .state('items', {
+    //   url: '/items'
+    // })
 
-  // .state('mainList.itemDetail', {
-  //   url: '/item-detail/{itemId}',
-  //   templateUrl: 'src/shoppinglist/templates/item-detail.template.html',
-  //   controller: "ItemDetailController as itemDetail"
-  // });
+    // .state('mainList.itemDetail', {
+    //   url: '/item-detail/{itemId}',
+    //   templateUrl: 'src/shoppinglist/templates/item-detail.template.html',
+    //   controller: "ItemDetailController as itemDetail"
+    // });
 
-}
+  }
 
 })()
