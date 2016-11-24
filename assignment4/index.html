@@ -11,18 +11,17 @@
 <body>
   <h1>Welcome to Our Restaurant</h1>
 
-  <div class="tabs">
+  <!-- <div class="tabs">
        <a ui-sref="home" ui-sref-active="activeTab">home</a>
        <a ui-sref="categories" ui-sref-active="activeTab">categories</a>
-  </div>
+        <a ui-sref="items" ui-sref-active="activeTab">items</a>
+  </div> -->
 
   <ui-view></ui-view>
 
   <!-- Libraries -->
   <script src="lib/angular.min.js"></script>
   <script src="lib/angular-ui-router.min.js"></script>
-
-  <!-- <script src="app.js"></script> -->
 
   <!-- modules -->
   <script src="menu/data.module.js"></script>
@@ -32,6 +31,9 @@
   <script src="routes.js"></script>
 
   <!-- artifacts -->
+  <script src="menu/menudata.service.js"></script>
+  <script src="menu/categories.controller.js"></script>
+  <script src="menu/categories.component.js"></script>
   <!-- <script src="menu/menu.component.js"></script>
   <script src="menu/menu.controller.js"></script>
   <script src="menu/menu.service.js"></script> -->

@@ -22,14 +22,14 @@
 
     // Premade list page
     .state('categories', {
-      url: '/categories'
-      // templateUrl: 'src/shoppinglist/templates/main-shoppinglist.template.html',
-      // controller: 'MainShoppingListController as mainList',
-      // resolve: {
-      //   items: ['ShoppingListService', function (ShoppingListService) {
-      //     return ShoppingListService.getItems();
-      //   }]
-      // }
+      url: '/categories',
+      templateUrl: 'menu/templates/main-categorylist.template.html',
+      controller: 'CategoriesController as mainList',
+      resolve: {
+        items: ['MenuDataService', function(MenuDataService) {
+          return MenuDataService.getAllCategories();
+        }]
+      }
     })
 
     .state('items', {
