@@ -21,20 +21,20 @@
     })
 
     // Premade list page
-    // .state('categories', {
-    //   url: '/categories'
-    //   // templateUrl: 'src/shoppinglist/templates/main-shoppinglist.template.html',
-    //   // controller: 'MainShoppingListController as mainList',
-    //   // resolve: {
-    //   //   items: ['ShoppingListService', function (ShoppingListService) {
-    //   //     return ShoppingListService.getItems();
-    //   //   }]
-    //   // }
-    // })
-    //
-    // .state('items', {
-    //   url: '/items'
-    // })
+    .state('categories', {
+      url: '/categories'
+      // templateUrl: 'src/shoppinglist/templates/main-shoppinglist.template.html',
+      // controller: 'MainShoppingListController as mainList',
+      // resolve: {
+      //   items: ['ShoppingListService', function (ShoppingListService) {
+      //     return ShoppingListService.getItems();
+      //   }]
+      // }
+    })
+
+    .state('items', {
+      url: '/items'
+    })
 
     // .state('mainList.itemDetail', {
     //   url: '/item-detail/{itemId}',
