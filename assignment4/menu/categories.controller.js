@@ -5,13 +5,13 @@
     .controller('CategoriesController', CategoriesController)
 
 
-  CategoriesController.$inject = ['MenuDataService', 'items']
+  CategoriesController.$inject = ['MenuDataService', 'categories']
 
-  function CategoriesController(MenuDataService, items) {
-    var mainlist = this
-    mainlist.items = items
+  function CategoriesController(MenuDataService, categories) {
+    var catctl = this
+    catctl.categories = categories
 
-    mainlist.foo = 'bar'
+    catctl.foo = 'bar'
   }
 
 })()

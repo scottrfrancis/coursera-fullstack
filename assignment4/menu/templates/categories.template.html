@@ -1,7 +1,9 @@
-<h3>Menu Categories</h3> {{ items.length }} - {{ baz }} : {{ num }}
-<h3 ng-hide="(items.length > 0)">Nothing Found</h3>
+<h3>Menu Categories</h3>
+<h3 ng-hide="($ctrl.categories.length > 0)">Nothing Found</h3>
 <ul>
-  <li ng-repeat='item in items'>
-    {{ item.name }}, {{ item.short_name }}, {{ item.description }}
+  <li ng-repeat='cat in $ctrl.categories'>
+    <a ui-sref="categories.items({categoryShortName: cat.short_name})">
+      {{ cat.name }}&nbsp;<i>({{ cat.short_name }})</i>
+    </a>
   </li>
 </ul>

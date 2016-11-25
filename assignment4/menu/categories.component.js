@@ -5,9 +5,7 @@
     .component('categories', {
       templateUrl: 'menu/templates/categories.template.html',
       bindings: {
-        items: '<',
-        baz: '<',
-        num: '<'
+        categories: '<'
       }
     })
 })()

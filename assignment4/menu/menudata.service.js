@@ -16,28 +16,29 @@
 
     dataSvc.getAllCategories = function() {
       var url = MenuDataServiceEndpoint + "/categories.json"
-      dataSvc.items = []
+      dataSvc.categories = []
 
       return $http.get(url).then(function(result) {
-        return result.data
-          //
-          // var d = result.data;
-          // console.log(d)
-          // result.data.menu_items.map((e) => {
-          //   dataSvc.categories.push(e)
-          // })
-          //
-          // return dataSvc.items
+
+        result.data.map((e) => {
+          dataSvc.categories.push(e)
+        })
+
+        return dataSvc.categories
       })
     }
 
     dataSvc.getItemsForCategory = function(categoryShortName) {
       var url = MenuDataServiceEndpoint + "/menu_items.json?category=" + categoryShortName
+      dataSvc.items = []
 
       return $http.get(url).then(function(result) {
+        console.log(result.data)
         result.data.menu_items.map((e) => {
-          dataSvc.categories.push(e)
+          dataSvc.items.push(e)
         })
+
+        return dataSvc.items
       })
     }
 
