@@ -20,7 +20,6 @@
       templateUrl: 'menu/templates/home.template.html'
     })
 
-    // Premade list page
     .state('categories', {
       url: '/categories',
       templateUrl: 'menu/templates/main-categorylist.template.html',
@@ -32,22 +31,16 @@
       }
     })
 
-    .state('categories.items', {
-      url: '/{categoryShortName}/items',
-      templateUrl: 'menu/templates/items.template.html',
+    .state('items', {
+      url: '/items/{categoryShortName}',
+      templateUrl: 'menu/templates/main-itemlist.template.html',
       controller: 'ItemsController as itemctl',
       resolve: {
-        items: ['MenuDataService', function(MenuDataService) {
-          return MenuDataService.getItemsForCategory("L")
+        items: ['MenuDataService', '$stateParams', function(MenuDataService, $stateParams) {
+          return MenuDataService.getItemsForCategory($stateParams.categoryShortName)
         }]
       }
     })
-
-    // .state('mainList.itemDetail', {
-    //   url: '/item-detail/{itemId}',
-    //   templateUrl: 'src/shoppinglist/templates/item-detail.template.html',
-    //   controller: "ItemDetailController as itemDetail"
-    // });
 
   }
 

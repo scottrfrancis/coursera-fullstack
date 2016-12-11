@@ -2,7 +2,8 @@
 <h3 ng-hide="($ctrl.categories.length > 0)">Nothing Found</h3>
 <ul>
   <li ng-repeat='cat in $ctrl.categories'>
-    <a ui-sref="categories.items({categoryShortName: cat.short_name})">
+    <!-- <a ui-sref="categories.items({categoryShortName: cat.short_name})"> -->
+      <a ui-sref="items({categoryShortName: cat.short_name})">
       {{ cat.name }}&nbsp;<i>({{ cat.short_name }})</i>
     </a>
   </li>

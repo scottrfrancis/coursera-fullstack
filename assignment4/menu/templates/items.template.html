@@ -1,1 +1,7 @@
-items
+<!-- {{ $ctrl.items.length }} items -->
+
+<ul>
+  <li ng-repeat='item in $ctrl.items'>
+      {{ item.name }}&nbsp;<i>({{ item.short_name }})</i>
+  </li>
+</ul>
