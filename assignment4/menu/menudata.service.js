@@ -33,7 +33,6 @@
       dataSvc.items = []
 
       return $http.get(url).then(function(result) {
-        // console.log(result.data)
         result.data.menu_items.map((e) => {
           dataSvc.items.push(e)
         })
