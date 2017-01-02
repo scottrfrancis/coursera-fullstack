@@ -1,0 +1,25 @@
+<form name='signupForm'>
+  <input type="text" name="firstName" value="">
+  <br/>
+
+  <input type="text" name="lastName" value="">
+  <br/>
+
+  <input type="email" name="email" placeholder="email"
+    ng-model="signupCtrl.email"
+    required>
+    <span ng-if="signupForm.email.$invalid && signupForm.email.$touched">
+      Must supply valid email address (user@domain)
+    </span>
+  <br/>
+
+  <input type="text" name="address" value="">
+  <br/>
+
+  <input type="text" name="phone" placeholder="###-###-####"
+    ng-model="signupCtrl.phone"
+    pattern="(\d{3})-(\d{3})-(\d{4})">
+    <span ng-if="(signupForm.phone.$invalid && signupForm.phone.$touched)">
+      Phone must be in ###-###-#### format
+    </span>
+</form>
