@@ -8,12 +8,17 @@
   function SignupController() {
     var signup = this
 
+    signup.menuItems = new Array()
+    signup.menuItems.push("A-1", "B-2")
+
     signup.submit = function() {
       signup.completed = true
     }
   }
 
   function MenuItemDirective() {
+    var signup = this
+    
     return {
         require: 'ngModel',
         link: function(scope, elm, attrs, ctrl) {
@@ -25,9 +30,7 @@
               return true
             }
 
-            if (viewValue > 12) {
-              valid = true
-            }
+            valid = (signup.menuItems.indexOf(modelValue) !== -1)
 
             return valid
           }
