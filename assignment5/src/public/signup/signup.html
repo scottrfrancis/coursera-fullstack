@@ -1,11 +1,19 @@
-<form name='signupForm'>
-  <input type="text" name="firstName" value="">
+<div class="col-xs-4">
+</div>
+<div class="col-xs-4">
+<form name='signupForm' class="form-horizontal">
+  <div class="form-group">
+
+  <label for="firstName" class="col-sm-2 control-label">First&nbsp;Name</label>
+  <input class="form-control" type="text" name="firstName" value="">
   <br/>
 
-  <input type="text" name="lastName" value="">
+  <label for="lastName" class="col-sm-2 control-label">Last&nbsp;Name</label>
+  <input class="form-control" type="text" name="lastName" value="">
   <br/>
 
-  <input type="email" name="email" placeholder="email"
+  <label for="email" class="col-sm-2 control-label">email&nbsp;address</label>
+  <input class="form-control" type="email" name="email" placeholder="email"
     ng-model="signupCtrl.email"
     required>
     <span ng-if="signupForm.email.$invalid && signupForm.email.$touched">
@@ -13,10 +21,12 @@
     </span>
   <br/>
 
-  <input type="text" name="address" value="">
+  <label for="address" class="col-sm-2 control-label">Postal&nbsp;Address</label>
+  <input class="form-control" type="text" name="address" value="">
   <br/>
 
-  <input type="text" name="phone" placeholder="###-###-####"
+  <label for="phone" class="col-sm-2 control-label">Phone&nbsp;Number</label>
+  <input class="form-control" type="text" name="phone" placeholder="###-###-####"
     ng-model="signupCtrl.phone"
     pattern="(\d{3})-(\d{3})-(\d{4})">
     <span ng-if="(signupForm.phone.$invalid && signupForm.phone.$touched)">
@@ -24,6 +34,22 @@
     </span>
   <br/>
 
-  <input type="text" name="fave" placeholder="favorite dish #"
-  >
+  <label for="fave" class="col-sm-2 control-label">Favorite&nbsp;Menu&nbsp;Item</label>
+  <input class="form-control" type="text" name="fave" placeholder="#"
+    ng-model="signupCtrl.fave"
+    required
+    menu-item >
+    <span ng-if="signupForm.fave.$invalid && signupForm.fave.$touched">
+      Please tell us the number of your favorite item
+    </span>
+  <br/>
+
+  <button class="btn btn-default"
+        ng-disabled="regForm.$invalid"
+        ng-click="reg.submit()">Submit</button>
+  <br/>
+</div>
 </form>
+</div>
+<div class="col-xs-4">
+</div>
