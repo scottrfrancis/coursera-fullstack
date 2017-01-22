@@ -5,37 +5,44 @@
     .controller('SignupController', SignupController)
     .directive('menuItem', MenuItemDirective)
 
-  function SignupController() {
+  SignupController.$inject = ['menuItems']
+
+  function SignupController(menuItems) {
     var signup = this
 
-    signup.menuItems = new Array()
-    signup.menuItems.push("A-1", "B-2")
+    signup.menuShorts = menuItems.menu_items.map(function(e) {
+      return e.short_name
+    })
 
     signup.submit = function() {
+      // check fave
+
+
+
       signup.completed = true
     }
   }
 
   function MenuItemDirective() {
     var signup = this
-    
+
     return {
-        require: 'ngModel',
-        link: function(scope, elm, attrs, ctrl) {
-          ctrl.$validators.menuItem = function(modelValue, viewValue) {
-            var valid = false
+      require: 'ngModel',
+      link: function(scope, elm, attrs, ctrl) {
+        ctrl.$validators.menuItem = function(modelValue, viewValue) {
+          var valid = false
 
-            if (ctrl.$isEmpty(modelValue)) {
-              // consider empty models to be valid
-              return true
-            }
-
-            valid = (signup.menuItems.indexOf(modelValue) !== -1)
-
-            return valid
+          if (ctrl.$isEmpty(modelValue)) {
+            // consider empty models to be valid
+            return true
           }
+
+          valid = (scope.signupCtrl.menuShorts.indexOf(modelValue) !== -1)
+
+          return valid
         }
       }
+    }
   }
 
 })()

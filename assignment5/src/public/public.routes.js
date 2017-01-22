@@ -46,7 +46,12 @@
         url: '/signup',
         templateUrl: 'src/public/signup/signup.html',
         controller: 'SignupController',
-        controllerAs: "signupCtrl"
+        controllerAs: 'signupCtrl',
+        resolve: {
+          menuItems: ['MenuService', function(MenuService) {
+            return MenuService.getMenuItems(undefined)
+          }]
+        }
       })
 
   }
