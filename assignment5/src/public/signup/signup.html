@@ -37,10 +37,10 @@
   <label for="fave" class="col-sm-2 control-label">Favorite&nbsp;Menu&nbsp;Item</label>
   <input class="form-control" type="text" name="fave" placeholder="#"
     ng-model="signupCtrl.fave"
-    required 
+    required
     menu-item >
     <span ng-if="signupForm.fave.$invalid && signupForm.fave.$touched">
-      Please tell us the number of your favorite item
+      No such menu number exists
     </span>
   <br/>
 

@@ -5,7 +5,7 @@
     .controller('SignupController', SignupController)
     .directive('menuItem', MenuItemDirective)
 
-  SignupController.$inject = ['menuItems']
+  SignupController.$inject = ['menuItems', 'FaveService']
 
   function SignupController(menuItems) {
     var signup = this
@@ -14,10 +14,9 @@
       return e.short_name
     })
 
-    signup.submit = function() {
-      // check fave
-
-
+    signup.submit = function(FaveService) {
+      // save the fave
+      FaveService.fave = 'foo'
 
       signup.completed = true
     }
