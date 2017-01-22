@@ -5,11 +5,13 @@
   <div class="form-group">
 
   <label for="firstName" class="col-sm-2 control-label">First&nbsp;Name</label>
-  <input class="form-control" type="text" name="firstName" value="">
+  <input class="form-control" type="text" name="firstName" value=""
+    ng-model="signupCtrl.firstName" >
   <br/>
 
   <label for="lastName" class="col-sm-2 control-label">Last&nbsp;Name</label>
-  <input class="form-control" type="text" name="lastName" value="">
+  <input class="form-control" type="text" name="lastName" value=""
+    ng-model="signupCtrl.lastName" >
   <br/>
 
   <label for="email" class="col-sm-2 control-label">email&nbsp;address</label>
@@ -22,7 +24,8 @@
   <br/>
 
   <label for="address" class="col-sm-2 control-label">Postal&nbsp;Address</label>
-  <input class="form-control" type="text" name="address" value="">
+  <input class="form-control" type="text" name="address" value=""
+    ng-model="signupCtrl.address" >
   <br/>
 
   <label for="phone" class="col-sm-2 control-label">Phone&nbsp;Number</label>
@@ -45,8 +48,8 @@
   <br/>
 
   <button class="btn btn-default"
-        ng-disabled="regForm.$invalid"
-        ng-click="reg.submit()">Submit</button>
+        ng-disabled="signupForm.$invalid"
+        ng-click="signupCtrl.submit()">Submit</button>
   <br/>
 </div>
 </form>

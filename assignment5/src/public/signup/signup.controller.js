@@ -7,16 +7,18 @@
 
   SignupController.$inject = ['menuItems', 'FaveService']
 
-  function SignupController(menuItems) {
+  function SignupController(menuItems, FaveService) {
     var signup = this
+    signup.faveService = FaveService
 
     signup.menuShorts = menuItems.menu_items.map(function(e) {
       return e.short_name
     })
 
-    signup.submit = function(FaveService) {
+    signup.submit = function() {
       // save the fave
-      FaveService.fave = 'foo'
+      signup.faveService.fave = this.fave
+        // signup.faveService.saveFave('bar')
 
       signup.completed = true
     }
