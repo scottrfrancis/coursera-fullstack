@@ -10,8 +10,11 @@
 
   function SignupController(menuItems, MenuService, FaveService) {
     var signup = this
+
     signup.menuService = MenuService
     signup.faveService = FaveService
+
+    signup.completed = false
 
     signup.menuShorts = menuItems.menu_items.map(function(e) {
       return e.short_name
