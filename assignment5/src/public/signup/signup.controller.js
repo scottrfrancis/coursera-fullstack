@@ -6,6 +6,7 @@
     .directive('menuItem', MenuItemDirective)
 
   SignupController.$inject = ['menuItems', 'MenuService', 'FaveService']
+  MenuItemDirective.$inject = ['$q']
 
   function SignupController(menuItems, MenuService, FaveService) {
     var signup = this
@@ -22,31 +23,39 @@
         console.log(data)
       })
 
-      // save the fave
       signup.faveService.fave = this.fave
-        // signup.faveService.saveFave('bar')
 
       signup.completed = true
     }
   }
 
-  function MenuItemDirective() {
+  function MenuItemDirective($q) {
     var signup = this
 
     return {
       require: 'ngModel',
       link: function(scope, elm, attrs, ctrl) {
-        ctrl.$validators.menuItem = function(modelValue, viewValue) {
-          var valid = false
-
+        ctrl.$asyncValidators.menuItem = function(modelValue, viewValue) {
           if (ctrl.$isEmpty(modelValue)) {
             // consider empty models to be valid
-            return true
+            // return true
+            return $q.resolve()
           }
 
-          valid = (scope.signupCtrl.menuShorts.indexOf(modelValue) !== -1)
+          var def = $q.defer()
+          // valid = (scope.signupCtrl.menuShorts.indexOf(modelValue) !== -1)
+          scope.signupCtrl.menuService.getMenuItem(modelValue)
+            .then(function(data) {
+              console.log("menuItem returned: " + data)
+              // return (data !== undefined)
+              if (data !== undefined) {
+                def.resolve()
+              } else {
+                def.reject()
+              }
+          })
 
-          return valid
+          return def.promise
         }
       }
     }
