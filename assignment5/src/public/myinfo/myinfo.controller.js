@@ -14,5 +14,4 @@ function MyinfoController(savedItems) {
 
   info.savedItems.test = 'foo'
 }
-
-})
+})()
