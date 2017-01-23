@@ -53,6 +53,16 @@
           }]
         }
       })
-
+      .state('public.myinfo', {
+        url: '/myinfo',
+        templateUrl: 'src/public/myinfo/myinfo.html',
+        controller: 'MyinfoController',
+        controllerAs: 'myinfoCtrl',
+        resolve: {
+          savedItems: ['FaveService', function(FaveService) {
+            return FaveService
+          }]
+        }
+      })
   }
 })()

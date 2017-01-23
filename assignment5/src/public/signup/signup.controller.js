@@ -26,6 +26,11 @@
         console.log(data)
       })
 
+      signup.faveService.firstName = this.firstName
+      signup.faveService.lastName = this.lastName
+      signup.faveService.email = this.email
+      signup.faveService.address = this.address
+      signup.faveService.phone = this.phone
       signup.faveService.fave = this.fave
 
       signup.completed = true
