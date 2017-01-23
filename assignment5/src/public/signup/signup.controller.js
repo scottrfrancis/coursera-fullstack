@@ -38,16 +38,12 @@
         ctrl.$asyncValidators.menuItem = function(modelValue, viewValue) {
           if (ctrl.$isEmpty(modelValue)) {
             // consider empty models to be valid
-            // return true
             return $q.resolve()
           }
 
           var def = $q.defer()
-          // valid = (scope.signupCtrl.menuShorts.indexOf(modelValue) !== -1)
           scope.signupCtrl.menuService.getMenuItem(modelValue)
             .then(function(data) {
-              console.log("menuItem returned: " + data)
-              // return (data !== undefined)
               if (data !== undefined) {
                 def.resolve()
               } else {

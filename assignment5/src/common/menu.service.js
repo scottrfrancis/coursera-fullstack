@@ -32,10 +32,8 @@
 
     service.getMenuItem = function(short_name) {
       return $http.get(ApiPath + '/menu_items/' + short_name + '.json').then(function(response) {
-        console.log("norm resp: " + response.status)
         return response.data
       }, function(response) {
-        console.log("err resp: " + response.status)
         return undefined
       })
     }
