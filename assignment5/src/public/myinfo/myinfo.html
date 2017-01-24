@@ -1,11 +1,14 @@
 <div class="container">
-  {{ myinfoCtrl.test }}
-
+  <span ng-if="myinfoCtrl.savedItems.fave === undefined">
+    Not Signed Up Yet.
+    <a ui-sref="public.signup">Sign up Now!</a>
+  </span>
   {{ myinfoCtrl.savedItems.firstName }} {{ myinfoCtrl.savedItems.lastName }}<br/>
   {{ myinfoCtrl.savedItems.address }} <br/>
   {{ myinfoCtrl.savedItems.phone }} <br/>
+  {{ myinfoCtrl.savedItems.email }} <br/>
   <span ng-if="myinfoCtrl.savedItems.fave !== undefined">
     Favorite Item: {{ myinfoCtrl.savedItems.fave }} <br/>
+    <menu-item menu-item="myinfoCtrl.faveItem"></menu-item>
   </span>
-
 </div>

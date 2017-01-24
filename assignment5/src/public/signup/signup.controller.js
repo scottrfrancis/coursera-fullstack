@@ -22,9 +22,9 @@
 
     signup.submit = function() {
       // check the fave
-      signup.menuService.getMenuItem(this.fave).then(function(data) {
-        console.log(data)
-      })
+      // signup.menuService.getMenuItem(this.fave).then(function(data) {
+      //   console.log(data)
+      // })
 
       signup.faveService.firstName = this.firstName
       signup.faveService.lastName = this.lastName

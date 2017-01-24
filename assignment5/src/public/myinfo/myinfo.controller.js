@@ -4,14 +4,16 @@
 angular.module('public')
   .controller('MyinfoController', MyinfoController)
 
-MyinfoController.$inject = ['savedItems']
+MyinfoController.$inject = ['savedItems', 'MenuService']
 
-function MyinfoController(savedItems) {
+function MyinfoController(savedItems, MenuService) {
   var info = this
 
-  console.log(savedItems)
   info.savedItems = savedItems
 
-  info.savedItems.test = 'foo'
+  MenuService.getMenuItem(savedItems.fave)
+  .then(function(data) {
+      info.faveItem = data
+  })
 }
 })()
